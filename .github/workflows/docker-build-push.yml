@@ -10,7 +10,7 @@ env:
   REGISTRY: ghcr.io
   # TODO: Replace with your actual GHCR image path
   # Format: ghcr.io/<github-username-or-org>/<image-name>
-  IMAGE: ghcr.io/PLACEHOLDER/finance-tracker-frontend
+  IMAGE: ghcr.io/AkshayShenvi/finance-tracker-frontend
 
 jobs:
   build:
@@ -52,7 +52,7 @@ jobs:
           context: .
           dockerfile: Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
