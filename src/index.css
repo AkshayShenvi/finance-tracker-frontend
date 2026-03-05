@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 13% 6%;
+    --foreground: 220 14% 96%;
+    --card: 228 12% 9%;
+    --card-foreground: 220 14% 96%;
+    --popover: 228 12% 9%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 158 100% 42%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 228 10% 14%;
+    --secondary-foreground: 220 14% 96%;
+    --muted: 228 10% 14%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 228 10% 14%;
+    --accent-foreground: 220 14% 96%;
+    --destructive: 350 84% 57%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 228 10% 14%;
+    --input: 228 10% 14%;
+    --ring: 158 100% 42%;
+    --radius: 0.75rem;
+    --sidebar: 225 13% 5%;
+    --profit: 158 100% 42%;
+    --loss: 350 84% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border box-border;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Syne', sans-serif;
+  }
+
+  .font-mono-finance {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .text-profit {
+    color: hsl(var(--profit));
+  }
+
+  .text-loss {
+    color: hsl(var(--loss));
+  }
+
+  .bg-profit {
+    background-color: hsl(var(--profit));
+  }
+
+  .bg-loss {
+    background-color: hsl(var(--loss));
+  }
+
+  .border-profit {
+    border-color: hsl(var(--profit));
+  }
+
+  .border-loss {
+    border-color: hsl(var(--loss));
+  }
+
+  .glow-profit {
+    box-shadow: 0 0 20px hsla(158, 100%, 42%, 0.15);
+  }
+
+  .sidebar-bg {
+    background-color: hsl(var(--sidebar));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(228 10% 20%);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(228 10% 30%);
+}
+
+/* Table row hover */
+.txn-row:hover {
+  background-color: hsl(228 10% 11%);
+}
+
+/* Animate fade in */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.3s ease-out both;
+}
+
+.animate-fade-up-1 { animation-delay: 0.05s; }
+.animate-fade-up-2 { animation-delay: 0.1s; }
+.animate-fade-up-3 { animation-delay: 0.15s; }
+.animate-fade-up-4 { animation-delay: 0.2s; }
+.animate-fade-up-5 { animation-delay: 0.25s; }
