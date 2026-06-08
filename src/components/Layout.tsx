@@ -50,7 +50,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             />
           </div>
           <span className="font-display text-base font-bold tracking-tight text-foreground">
-            Finance tracker
+            OpenFinStack
           </span>
         </div>
 
