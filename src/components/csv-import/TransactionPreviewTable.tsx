@@ -159,6 +159,10 @@ export default function TransactionPreviewTable({
                   </td>
                   <td className="px-3 py-2.5 max-w-[240px]">
                     <input
+                      // Content-based key so the uncontrolled input remounts (re-applying
+                      // defaultValue) when rows shift after a removal — otherwise the stale
+                      // description stays bound to the position and mismatches the amount.
+                      key={`${transaction.date}-${transaction.original_amount}-${transaction.description}`}
                       type="text"
                       defaultValue={transaction.description}
                       disabled={isDuplicate}
